@@ -76,7 +76,7 @@ def header_class_file():
     path1 = re.compile(r"d/(.*?)/view").search(header_categories).group(1)
     fileDownloaded = drive.CreateFile({'id':path1})
     header_file = fileDownloaded.GetContentFile('header_class.csv')
-    return pd.read_csv("/content/header_class.csv", usecols=['Entity','Header_Class'])
+    return pd.read_csv("/content/header_class.csv", usecols=['Header','Header_Class'])
 
 def Entity_class_file():
     entity_classification =  (""""https://drive.google.com/file/d/1hNultpiWzfOqnQVPztwDMDAqi1jbTTg5/view?usp=sharing"\n""")

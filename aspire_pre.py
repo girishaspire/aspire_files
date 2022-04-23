@@ -64,8 +64,8 @@ def add_entity_category(data, entity_category):
 ######### Adds header category to dataframe ##############
 def add_header_category (data,header_categories):
     data = pd.merge(data,header_categories,on= 'Header', how = 'left')
-    data['Debit_header'].fillna(value= 0, inplace=True)
-    data['Balance_header'].fillna(value= 0, inplace=True)
+    data['Header_Class'] = data['Header_Class'].fillna(value= 0).astype(int)
+#     data['Balance_header'].fillna(value= 0, inplace=True)
     # data['Credit_header'].fillna(value= 0, inplace=True)
     return data
 
